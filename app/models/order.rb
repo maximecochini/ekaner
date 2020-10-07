@@ -18,4 +18,17 @@ class Order < ApplicationRecord
   validates :street_address, presence: true
   validates :zipcode, presence: true
   validates :country, presence: true
+  
+  after_initialize :init
+
+  def init
+    self.sent_to_ekan ||= false
+  end
+
+  def send_to_ekan
+  end
+
+  def send_all_pending
+    Order.where(sent_to_ekan: false).each { |order| order.send_to_ekan }
+  end
 end

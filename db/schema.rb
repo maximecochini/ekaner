@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_07_163753) do
+ActiveRecord::Schema.define(version: 2020_10_07_164742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_163753) do
     t.string "zipcode"
     t.string "country"
     t.bigint "source_id", null: false
+    t.boolean "sent_to_ekan"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["source_id"], name: "index_orders_on_source_id"
   end
