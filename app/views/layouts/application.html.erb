@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SellermaniaToEkan</title>
+    <title>Ekaner <% if @_page %>• <%= @_page %> <% end %>- Sync eKan.</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,9 +12,11 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
 
     <%= yield %>
+
+    <%= render 'shared/footer' %>
   </body>
 </html>
